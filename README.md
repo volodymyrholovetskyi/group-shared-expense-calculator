@@ -1,4 +1,4 @@
-# Group Shared Expense Calculator
+# Group Shared Expense Calculator (Microservices architecture)
 
 * [General info](#general-info)  
 * [Requirement](#requirements)  
@@ -10,6 +10,8 @@
 This expense split program can be used to calculate the cost share of each person in the group. For example, when you go on a trip with your friends where multiple people pay for shared expenses. At the end of the trip, you would need to calculate how much each person owes and to whom.  
 
 ## Requirements
+
+**User:**
 
 1. The user must be able to register  
 2. After logging in, the user must be able to add other participants  
@@ -26,14 +28,19 @@ This expense split program can be used to calculate the cost share of each perso
 ## Technologies
 
 - Java 17  
-- Spring Boot  
+- Spring Boot 
+- Eureka Server
+- Spring Cloud
 - Spring Security  
-- Hibernate  
+- Spring Data
+- Spring Scheduler
+- Hexagonal Architecture
+- CI/CD
+- RabbitMQ
 - JUnit 5  
 - AssertJ  
 - Mockito  
 - Lombok  
-- Postgresql  
-- Hexagonal Architecture  
+- MySQL  
 - Docker  
 - Git
