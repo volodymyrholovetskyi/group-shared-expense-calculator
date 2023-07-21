@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mysql-db:
+    container_name: transaction
+    image: mysql:8.0.33
+    restart: always
+    environment:
+      MYSQL_DATABASE: transaction
+      MYSQL_USER: admin
+      MYSQL_ROOT_PASSWORD: pas123
+      MYSQL_PASSWORD: pas123
+
+    ports:
+      - "3307:3306"
