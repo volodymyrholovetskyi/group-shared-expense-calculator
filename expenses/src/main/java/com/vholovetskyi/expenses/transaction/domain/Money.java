@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.expense.domain;
+package com.vholovetskyi.expenses.transaction.domain;
 
 import com.vholovetskyi.expenses.exceptions.ExceptionError;
 import com.vholovetskyi.expenses.exceptions.IncorrectMoneyException;

@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.expense.domain;
+package com.vholovetskyi.expenses.transaction.domain;
 
 public enum SplitType {
     EQUAL, UNEQUAL, PERCENT

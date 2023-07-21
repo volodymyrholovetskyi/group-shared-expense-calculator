@@ -1,6 +1,7 @@
-package com.vholovetskyi.expenses.expense.domain;
+package com.vholovetskyi.expenses.transaction.domain;
 
 import com.vholovetskyi.expenses.commons.BaseEntity;
+import com.vholovetskyi.expenses.participant.domain.Participant;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,9 +28,9 @@ public class Event extends BaseEntity {
     @OneToMany(mappedBy = "event")
     private Set<Transaction> transactions;
 
-    @ElementCollection
-    @Column(name = "participant_ids")
-    private Set<Long> participantIds;
+    @OneToMany
+    @JoinColumn(name = "participant_id")
+    private Set<Participant> participants;
     private LocalDate endDate;
 
 }

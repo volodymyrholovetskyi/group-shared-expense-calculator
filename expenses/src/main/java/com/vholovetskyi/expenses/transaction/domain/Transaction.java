@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.expense.domain;
+package com.vholovetskyi.expenses.transaction.domain;
 
 
 import com.vholovetskyi.expenses.commons.BaseEntity;
@@ -7,8 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Set;
 
 @Entity
 @NoArgsConstructor
