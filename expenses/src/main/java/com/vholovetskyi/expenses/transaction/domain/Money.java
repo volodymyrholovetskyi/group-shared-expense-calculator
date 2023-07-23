@@ -1,7 +1,8 @@
 package com.vholovetskyi.expenses.transaction.domain;
 
-import com.vholovetskyi.expenses.exceptions.ExceptionError;
-import com.vholovetskyi.expenses.exceptions.IncorrectMoneyException;
+import com.vholovetskyi.expenses.commons.exceptions.ExceptionError;
+import com.vholovetskyi.expenses.commons.exceptions.IncorrectMoneyException;
+import com.vholovetskyi.expenses.event.domain.Currency;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

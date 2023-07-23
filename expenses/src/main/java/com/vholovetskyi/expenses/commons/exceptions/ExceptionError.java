@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.exceptions;
+package com.vholovetskyi.expenses.commons.exceptions;
 
 public enum ExceptionError {
     MONEY_ZERO_OR_NEGATIVE("A zero or negative value has been entered");
