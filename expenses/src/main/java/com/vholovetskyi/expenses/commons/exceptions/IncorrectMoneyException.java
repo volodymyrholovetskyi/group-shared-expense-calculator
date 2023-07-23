@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.exceptions;
+package com.vholovetskyi.expenses.commons.exceptions;
 
 public class IncorrectMoneyException extends RuntimeException {
 
