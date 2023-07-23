@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.transaction.domain;
+package com.vholovetskyi.expenses.event.domain;
 
 public enum EventStatus {
     ACTIVE, INACTIVE

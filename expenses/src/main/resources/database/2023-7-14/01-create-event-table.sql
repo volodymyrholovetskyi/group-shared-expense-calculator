@@ -17,6 +17,7 @@ create table event
     id             BIGINT       NOT NULL AUTO_INCREMENT PRIMARY KEY,
     uuid           VARCHAR(255) NOT NULL,
     version        BIGINT       NOT NULL,
+    name           VARCHAR(255) NOT NULL,
     description    VARCHAR(255) DEFAULT NULL,
     status         VARCHAR(255) NOT NULL,
     currency_code  VARCHAR(3)   NOT NULL,

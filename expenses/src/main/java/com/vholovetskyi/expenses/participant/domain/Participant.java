@@ -1,6 +1,6 @@
 package com.vholovetskyi.expenses.participant.domain;
 
-import com.vholovetskyi.expenses.commons.BaseEntity;
+import com.vholovetskyi.expenses.commons.jpa.BaseEntity;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,9 +15,7 @@ import lombok.Setter;
 public class Participant extends BaseEntity {
 
     private Long id;
-
     private String name;
-
     private String email;
 
 }

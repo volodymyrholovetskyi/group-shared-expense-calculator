@@ -1,7 +1,8 @@
 package com.vholovetskyi.expenses.transaction.domain;
 
 
-import com.vholovetskyi.expenses.commons.BaseEntity;
+import com.vholovetskyi.expenses.commons.jpa.BaseEntity;
+import com.vholovetskyi.expenses.event.domain.Event;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
