@@ -1,12 +1,12 @@
 package com.vholovetskyi.expenses.event.domain;
 
 import com.vholovetskyi.expenses.commons.jpa.BaseEntity;
-import com.vholovetskyi.expenses.participant.domain.Participant;
 import com.vholovetskyi.expenses.transaction.domain.Transaction;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -27,11 +27,18 @@ public class Event extends BaseEntity {
     private EventStatus status;
 
     @OneToMany(mappedBy = "event")
-    private Set<Transaction> transactions;
+    private Set<Transaction> transactions = new HashSet<>();
 
-    @OneToMany
-    @JoinColumn(name = "participant_id")
-    private Set<Participant> participants;
+//    @OneToMany
+//    @JoinColumn(name = "participant_id")
+//    private Set<Participant> participants = new HashSet<>();
+
+    @ElementCollection
+    @CollectionTable(name = "event_participant_ids", joinColumns = @JoinColumn(name = "event_id"))
+    private Set<ParticipantIds> participantIds = new HashSet<>();
     private LocalDate endDate;
 
+    public void addParticipantIds(Set<ParticipantIds> participantsIds) {
+        participantIds.addAll(participantsIds);
+    }
 }

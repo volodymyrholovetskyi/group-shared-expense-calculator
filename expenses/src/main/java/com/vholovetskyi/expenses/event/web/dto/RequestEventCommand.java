@@ -12,7 +12,7 @@ public record RequestEventCommand(
         String description,
         String currency,
         String status,
-        Set<Participant> participants,
+        Set<Long> participantIds,
         LocalDate endDate
 
 ) {
@@ -23,7 +23,7 @@ public record RequestEventCommand(
                 description,
                 currency,
                 status,
-                participants,
+                participantIds,
                 endDate
         );
     }
