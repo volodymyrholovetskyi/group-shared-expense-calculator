@@ -1,6 +1,6 @@
-package com.vholovetskyi.expenses.transaction.web.dto;
+package com.vholovetskyi.expenses.journey.web.dto;
 
-import com.vholovetskyi.expenses.transaction.application.dto.CreateTransactionCommand;
+import com.vholovetskyi.expenses.journey.application.dto.CreateTransactionCommand;
 
 import java.math.BigDecimal;
 

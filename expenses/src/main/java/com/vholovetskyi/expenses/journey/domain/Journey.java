@@ -1,7 +1,6 @@
 package com.vholovetskyi.expenses.journey.domain;
 
 import com.vholovetskyi.expenses.commons.jpa.BaseEntity;
-import com.vholovetskyi.expenses.transaction.domain.Transaction;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,10 +25,14 @@ public class Journey extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private JourneyStatus status;
 
-    @OneToMany(cascade = CascadeType.REMOVE)
+    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "journey_id")
     private Set<Transaction> transactions = new HashSet<>();
 
     private LocalDate endDate;
+
+    public void addTransaction(Transaction transaction) {
+        this.transactions.add(transaction);
+    }
 
 }

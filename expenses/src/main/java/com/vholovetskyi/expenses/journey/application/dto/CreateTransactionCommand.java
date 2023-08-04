@@ -1,9 +1,9 @@
-package com.vholovetskyi.expenses.transaction.application.dto;
+package com.vholovetskyi.expenses.journey.application.dto;
 
 import com.vholovetskyi.expenses.journey.domain.Currency;
-import com.vholovetskyi.expenses.transaction.domain.Money;
-import com.vholovetskyi.expenses.transaction.domain.SplitType;
-import com.vholovetskyi.expenses.transaction.domain.Transaction;
+import com.vholovetskyi.expenses.journey.domain.Money;
+import com.vholovetskyi.expenses.journey.domain.SplitType;
+import com.vholovetskyi.expenses.journey.domain.Transaction;
 
 import java.math.BigDecimal;
 

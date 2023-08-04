@@ -13,6 +13,10 @@ create table transaction
     currency_code VARCHAR(3)    NOT NULL,
     create_date   TIMESTAMP     NOT NULL,
     update_date   TIMESTAMP     NOT NULL,
-    journey_id    BIGINT
---     CONSTRAINT fk_transaction_journey FOREIGN KEY (event_id) REFERENCES journey (id)
+    journey_id    BIGINT        NOT NULL,
+    CONSTRAINT `fk_transaction_journey`
+        FOREIGN KEY (`journey_id`)
+            REFERENCES `journey` (`id`)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 );
