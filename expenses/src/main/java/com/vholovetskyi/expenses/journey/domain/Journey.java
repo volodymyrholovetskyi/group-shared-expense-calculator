@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.event.domain;
+package com.vholovetskyi.expenses.journey.domain;
 
 import com.vholovetskyi.expenses.commons.jpa.BaseEntity;
 import com.vholovetskyi.expenses.transaction.domain.Transaction;
@@ -15,7 +15,7 @@ import java.util.Set;
 @Setter
 @Builder
 @Entity
-public class Event extends BaseEntity {
+public class Journey extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -24,21 +24,12 @@ public class Event extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private Currency currencyCode;
     @Enumerated(value = EnumType.STRING)
-    private EventStatus status;
+    private JourneyStatus status;
 
-    @OneToMany(mappedBy = "event")
+    @OneToMany(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "journey_id")
     private Set<Transaction> transactions = new HashSet<>();
 
-//    @OneToMany
-//    @JoinColumn(name = "participant_id")
-//    private Set<Participant> participants = new HashSet<>();
-
-    @ElementCollection
-    @CollectionTable(name = "event_participant_ids", joinColumns = @JoinColumn(name = "event_id"))
-    private Set<ParticipantIds> participantIds = new HashSet<>();
     private LocalDate endDate;
 
-    public void addParticipantIds(Set<ParticipantIds> participantsIds) {
-        participantIds.addAll(participantsIds);
-    }
 }

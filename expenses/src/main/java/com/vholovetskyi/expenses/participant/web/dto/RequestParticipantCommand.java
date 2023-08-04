@@ -1,6 +1,5 @@
 package com.vholovetskyi.expenses.participant.web.dto;
 
-import com.vholovetskyi.expenses.event.application.dto.CreateEventCommand;
 import com.vholovetskyi.expenses.participant.application.dto.CreateParticipantCommand;
 
 public record RequestParticipantCommand(

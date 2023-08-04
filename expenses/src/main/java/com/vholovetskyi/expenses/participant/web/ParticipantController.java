@@ -1,6 +1,5 @@
 package com.vholovetskyi.expenses.participant.web;
 
-import com.vholovetskyi.expenses.event.web.dto.RequestEventCommand;
 import com.vholovetskyi.expenses.participant.application.port.ParticipantUseCase;
 import com.vholovetskyi.expenses.participant.web.dto.RequestParticipantCommand;
 import lombok.RequiredArgsConstructor;
