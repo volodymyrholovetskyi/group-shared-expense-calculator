@@ -1,4 +1,4 @@
-package com.vholovetskyi.expenses.event.domain;
+package com.vholovetskyi.expenses.journey.domain;
 
 
 import java.util.Arrays;

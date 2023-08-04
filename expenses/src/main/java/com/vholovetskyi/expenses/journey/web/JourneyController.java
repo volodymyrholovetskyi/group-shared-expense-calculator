@@ -1,8 +1,8 @@
-package com.vholovetskyi.expenses.event.web;
+package com.vholovetskyi.expenses.journey.web;
 
-import com.vholovetskyi.expenses.event.application.port.EventUseCase;
-import com.vholovetskyi.expenses.event.domain.Event;
-import com.vholovetskyi.expenses.event.web.dto.RequestEventCommand;
+import com.vholovetskyi.expenses.journey.application.port.EventUseCase;
+import com.vholovetskyi.expenses.journey.domain.Journey;
+import com.vholovetskyi.expenses.journey.web.dto.RequestJourneyCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,19 +12,19 @@ import java.util.List;
 @RestController
 @RequestMapping("events")
 @RequiredArgsConstructor
-public class EventController {
+public class JourneyController {
 
     private final EventUseCase eventUseCase;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    List<Event> getEvents() {
+    List<Journey> getEvents() {
         return eventUseCase.getEvents();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    void createEvent(@RequestBody RequestEventCommand requestEvent) {
+    void createEvent(@RequestBody RequestJourneyCommand requestEvent) {
          eventUseCase.createEvent(requestEvent.toCreateEventCommand());
     }
 }
