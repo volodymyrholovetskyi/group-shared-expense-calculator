@@ -1,59 +1,63 @@
-# Group Shared Expense Calculator (Microservices architecture)
+# Group Shared Expense Calculator (in progres)
 
 * [General info](#general-info)  
 * [Requirement](#requirements)  
-* [Use Case](#use-case)  
-* [Technologies](#technologies)  
+* [API Documentation](#api-documentation) 
+* [Technologies](#technologies) 
+* [Conclusion](#conclusion)
 
-## General info
+## General info:
 
 This cost sharing program can be used to calculate the cost share of each person in the group. For example, when you go on a trip with friends, where several people pay for joint expenses. At the end of the trip you will need to calculate how much each person owes and to whom. With this program, you can automate the entire process.
 
-## Requirements
+## Requirements:
 
-#### Admin:
+#### Admin
 
-> - The admin can add, confirm, cancel, extend the subscription
+> - should be able to add, confirm, cancel, extend the subscription
 > 
-> - Admin has access to view all subscribers
+> - has access to view all subscribers
 
-#### Subscription:
+#### Subscription
 
-> - The user must be able to register  after subscribing
+> - the user must be able to register  after subscribing
 
-> - After logging in, the user must be able to add other participants  
+> - after logging in, the user must be able to add other participants  
 > 
-> - After adding other participants, the generated login and password should be sent to the participants' mail  
+> - after adding other participants, the generated login and password should be sent to the participants' mail  
 > 
-> - A subscribed member can create an event  
+> - a subscribed member can create an event  
 > 
-> - A signed member can create, edit, delete an event  
+> - a signed member can create, edit, delete an event  
 > 
-> - A signed member has access to create, edit, and modify expenses  
+> - a signed member has access to create, edit, and modify expenses  
 > 
-> - At the end of the deadline, participants must receive a report by email 
+> - at the end of the deadline, participants must receive a report by email 
 
-#### Participant:
+#### Participant
 
-> - The participant must be able to register
+> - the participant must be able to register
 
-> - The participant has the opportunity to create a new expense, review expenses and balance
+> - the participant has the opportunity to create a new expense, review expenses and balance
 
 #### UX/UI:
 
-> - Information about the list of expenses should be displayed on the expenses subpage
+> - information about the list of expenses should be displayed on the expenses subpage
 > 
-> - Information about the balance of participants should be displayed on the balance subpage
+> - information about the balance of participants should be displayed on the balance subpage
 
+## API Documentation:
 
+| Operation                                                | URL template                     |
+| -------------------------------------------------------- | -------------------------------- |
+| Eureka Server Page (registration of all active services) | GET http://localhost:8761/eureka |
+| Get a list of events                                     | GET /events                      |
+| Create a new event                                       | POST /events                     |
+| Get a list of expenses associated with the event         | GET /expenses/event/{id}         |
+| Create a new expenses                                    | POST /expenses                   |
+| Create a new participant                                 | POST /participants               |
 
-## Use Case
-
-| url                          | call method | description                                                       |
-|:---------------------------- |:-----------:| ----------------------------------------------------------------- |
-| http://localhost:8761/eureka | -           | Go to the Eureka Server page. Registration of all active services |
-
-## Technologies
+## Technologies:
 
 - Java 17  
 - Spring Boot 
@@ -63,6 +67,7 @@ This cost sharing program can be used to calculate the cost share of each person
 - Spring Data
 - Spring Scheduler
 - Hexagonal Architecture
+- Liquibase
 - CI/CD
 - RabbitMQ
 - JUnit 5  
@@ -72,3 +77,5 @@ This cost sharing program can be used to calculate the cost share of each person
 - MySQL  
 - Docker  
 - Git
+
+## Conclusion:

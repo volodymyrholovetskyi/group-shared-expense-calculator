@@ -15,7 +15,7 @@ public class ParticipantController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    void createEvent(@RequestBody RequestParticipantCommand requestParticipant) {
+    void createParticipant(@RequestBody RequestParticipantCommand requestParticipant) {
         participantService.createParticipant(requestParticipant.toCreateParticipantCommand());
     }
 }
