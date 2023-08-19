@@ -1,6 +1,13 @@
 package com.vholovetskyi.expenses.domain;
 
-public enum SplitType {
-    EQUAL, UNEQUAL, PERCENT
+import java.util.Arrays;
 
+public enum SplitType {
+    EQUAL, UNEQUAL, PERCENT;
+
+    public static SplitType of(String value) {
+       return Arrays.stream(values())
+                .filter(v -> v.name().equalsIgnoreCase(value))
+                .findFirst().orElseThrow();
+    }
 }

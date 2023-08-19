@@ -14,6 +14,7 @@ create table expenses
     create_date   TIMESTAMP     NOT NULL,
     update_date   TIMESTAMP     NOT NULL,
     event_id    BIGINT        NOT NULL,
+    payer_id    BIGINT        NOT NULL,
     CONSTRAINT `fk_expenses_event`
         FOREIGN KEY (`event_id`)
             REFERENCES `event` (`id`)

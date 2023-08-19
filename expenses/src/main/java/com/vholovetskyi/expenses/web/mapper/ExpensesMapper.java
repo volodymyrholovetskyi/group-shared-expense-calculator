@@ -3,6 +3,7 @@ package com.vholovetskyi.expenses.web.mapper;
 import com.vholovetskyi.event.domain.Currency;
 import com.vholovetskyi.expenses.domain.Expenses;
 import com.vholovetskyi.expenses.domain.Money;
+import com.vholovetskyi.expenses.domain.PayerId;
 import com.vholovetskyi.expenses.domain.SplitType;
 import com.vholovetskyi.expenses.web.dto.CreateExpensesDto;
 import org.springframework.stereotype.Component;
@@ -19,10 +20,11 @@ public class ExpensesMapper implements Function<CreateExpensesDto, Expenses> {
                 createExpenses.category(),
                 SplitType.EQUAL,
                 createExpenses.eventId(),
-                Money.create(
+                Money.createAmount(
                         createExpenses.amount(),
                         Currency.of(createExpenses.currencyCode())
-                )
+                ),
+                PayerId.create(createExpenses.payerId())
         );
     }
 }

@@ -13,6 +13,7 @@ public record CreateExpensesDto(
         String split,
         String currencyCode,
         Long eventId,
-        BigDecimal amount
+        BigDecimal amount,
+        Long payerId
 ) {
 }

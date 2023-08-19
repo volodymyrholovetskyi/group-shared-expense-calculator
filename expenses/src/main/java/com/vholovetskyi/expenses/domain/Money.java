@@ -25,7 +25,14 @@ public class Money {
         this.currencyCode = currencyCode;
     }
 
-    public static Money create(BigDecimal amount, Currency currency) {
+    public static Money createAmount(BigDecimal amount, Currency currency) {
+        if (amount.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new IncorrectMoneyException(ExceptionError.MONEY_ZERO_OR_NEGATIVE);
+        }
+        return new Money(amount, currency);
+    }
+
+    public static Money createPercent(BigDecimal amount, Currency currency) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IncorrectMoneyException(ExceptionError.MONEY_ZERO_OR_NEGATIVE);
         }

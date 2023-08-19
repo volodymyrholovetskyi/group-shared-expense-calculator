@@ -24,7 +24,8 @@ public class Expenses extends BaseEntity {
     private Long eventId;
     @Embedded
     private Money amount;
-
+    @Embedded
+    private PayerId payerId;
 
     public BigDecimal getAmount() {
         return amount.getAmount();

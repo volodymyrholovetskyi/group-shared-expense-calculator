@@ -8,7 +8,15 @@
 
 ## General info:
 
-This cost sharing program can be used to calculate the cost share of each person in the group. For example, when you go on a trip with friends, where several people pay for joint expenses. At the end of the trip you will need to calculate how much each person owes and to whom. With this program, you can automate the entire process.
+    This cost sharing program can be used to calculate the cost share of each person in the group. For example, when you go on a trip with friends, where several people pay for joint expenses. At the end of the trip you will need to calculate how much each person owes and to whom. With this program, you can automate the entire process.
+
+    Three types of expense sharing: 
+
+- Split Equal
+
+- Split Unequal - Amt
+
+- Split Unequal - %
 
 ## Requirements:
 

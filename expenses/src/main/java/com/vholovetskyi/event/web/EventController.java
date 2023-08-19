@@ -6,6 +6,7 @@ import com.vholovetskyi.event.web.dto.CreateEventDto;
 import com.vholovetskyi.event.web.dto.ResponseEventDto;
 import com.vholovetskyi.event.web.mapper.EventMapper;
 import com.vholovetskyi.event.web.mapper.EventDtoMapper;
+import com.vholovetskyi.expenses.domain.Expenses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

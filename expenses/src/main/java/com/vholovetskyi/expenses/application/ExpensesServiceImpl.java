@@ -5,26 +5,41 @@ import com.vholovetskyi.event.domain.Event;
 import com.vholovetskyi.expenses.application.port.ExpensesService;
 import com.vholovetskyi.expenses.db.ExpensesJpaRepository;
 import com.vholovetskyi.expenses.domain.Expenses;
+import com.vholovetskyi.expenses.domain.factory.ExpensesFactory;
+import com.vholovetskyi.expenses.web.dto.CreateExpensesDto;
 import com.vholovetskyi.expenses.web.dto.ResponseExpensesDto;
-import lombok.RequiredArgsConstructor;
+import com.vholovetskyi.expenses.web.mapper.ExpensesDtoMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class ExpensesServiceImpl implements ExpensesService {
     private final EventService eventService;
     private final ExpensesJpaRepository expensesJpa;
+    private final ExpensesDtoMapper expensesDtoMapper;
+
+    public ExpensesServiceImpl(
+            EventService eventService,
+            ExpensesJpaRepository repository,
+            ExpensesDtoMapper expensesDtoMapper) {
+        this.eventService = eventService;
+        this.expensesJpa = repository;
+        this.expensesDtoMapper = expensesDtoMapper;
+    }
 
     @Override
-    public List<Expenses> getListExpensesByIdEvent(Long eventId) {
-        return expensesJpa.findAllExpensesByIdEvent(eventId);
+    public List<ResponseExpensesDto> getEventExpenses(Long eventId) {
+        return expensesJpa.getEventExpenses(eventId)
+                .stream()
+                .map(expensesDtoMapper)
+                .toList();
     }
     @Override
-    public void createExpenses(Expenses expenses) {
-        Event event = getEventById(expenses.getEventId());
-        event.addExpenses(expenses);
+    public void createExpenses(CreateExpensesDto expenses) {
+        Event event = getEventById(expenses.eventId());
+        Expenses newExpenses= ExpensesFactory.createExpenses(expenses);
+        event.addExpenses(newExpenses);
         eventService.createEvent(event);
     }
 
