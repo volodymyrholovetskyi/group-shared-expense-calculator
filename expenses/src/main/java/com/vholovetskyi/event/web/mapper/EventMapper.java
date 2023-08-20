@@ -17,7 +17,7 @@ public class EventMapper implements Function<CreateEventDto, Event> {
                 .name(createEvent.name())
                 .description(createEvent.description())
                 .status(EventStatus.ACTIVE)
-                .currencyCode(Currency.of(createEvent.currency()))
+                .currencyCode(Currency.parseString(createEvent.currency()))
                 .endDate(createEvent.endDate())
                 .build();
     }

@@ -4,22 +4,20 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class PayerId {
-
+public class PayerID {
     @Column(name = "payer_id")
     private Long id;
 
-    protected PayerId() {
+    protected PayerID() {
     }
-
-    private PayerId(Long id) {
+    private PayerID(Long id) {
         this.id = id;
     }
 
-    public static PayerId create(Long id) {
+    public static PayerID create(Long id) {
         if (id <= 0) {
             throw new IllegalArgumentException("");
         }
-        return new PayerId(id);
+        return new PayerID(id);
     }
 }

@@ -12,7 +12,7 @@ public enum Currency {
         this.code = code;
     }
 
-    public static Currency of(String currencyCode) {
+    public static Currency parseString(String currencyCode) {
         return Arrays.stream(values())
                 .filter(c -> c.code.equalsIgnoreCase(currencyCode))
                 .findFirst()

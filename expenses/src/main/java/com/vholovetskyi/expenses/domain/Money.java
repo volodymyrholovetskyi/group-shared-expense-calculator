@@ -10,11 +10,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 
 @NoArgsConstructor
 @Embeddable
 @Getter
 public class Money {
+
+    private static final BigDecimal HUNDRED = new BigDecimal("100");
     private BigDecimal amount;
 
     @Enumerated(value = EnumType.STRING)
@@ -25,18 +28,18 @@ public class Money {
         this.currencyCode = currencyCode;
     }
 
-    public static Money createAmount(BigDecimal amount, Currency currency) {
+    public static Money createInAmount(BigDecimal amount, Currency currency) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IncorrectMoneyException(ExceptionError.MONEY_ZERO_OR_NEGATIVE);
+            throw new IncorrectMoneyException(ExceptionError.INCORRECT_AMOUNT);
         }
         return new Money(amount, currency);
     }
 
-    public static Money createPercent(BigDecimal amount, Currency currency) {
-        if (amount.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IncorrectMoneyException(ExceptionError.MONEY_ZERO_OR_NEGATIVE);
+    public static Money createInPercent(BigDecimal percent, Currency currency) {
+        if (percent.compareTo(BigDecimal.ZERO) <= 0
+                && percent.compareTo(HUNDRED) < 0) {
+            throw new IncorrectMoneyException(ExceptionError.INCORRECT_PERCENT);
         }
-        return new Money(amount, currency);
+        return new Money(percent, currency);
     }
-
 }

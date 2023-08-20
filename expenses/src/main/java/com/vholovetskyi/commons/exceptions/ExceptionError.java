@@ -1,7 +1,8 @@
 package com.vholovetskyi.commons.exceptions;
 
 public enum ExceptionError {
-    MONEY_ZERO_OR_NEGATIVE("A zero or negative value has been entered");
+    INCORRECT_AMOUNT("Incorrect amount entered"),
+    INCORRECT_PERCENT("Incorrect percentage entered");
 
     String message;
 

@@ -13,7 +13,7 @@ public class ExpensesFactory {
     }
 
     public static Expenses createExpenses(CreateExpensesDto expenses){
-        SplitType split = of(expenses.split());
+        SplitType split = parseString(expenses.split());
         return switch (split) {
             case EQUAL -> new ExpensesEqual().create(expenses);
             case UNEQUAL -> new ExpensesUnequal().create(expenses);

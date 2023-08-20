@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/expenses")
 @RequiredArgsConstructor
 public class ExpensesController {
-
     private final ExpensesService expensesService;
 
     @ResponseStatus(HttpStatus.OK)
